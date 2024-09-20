@@ -1,21 +1,16 @@
 import dynamic from "next/dynamic";
-import type { ExcalidrawElement } from "@excalidraw/excalidraw/types/element/types";
+import Script from "next/script";
 
-const Excalidraw = dynamic(
-  async () => (await import("@excalidraw/excalidraw")).Excalidraw,
+const ExcalidrawWithClientOnly = dynamic(
+  async () => (await import("./excalidrawWrapper")).default,
   { ssr: false },
 );
 
 export default function BoardScreen() {
-  // Objective: Convert this as a dynamic board screen
-  
-  // TODO: Debounce this function
-  const handleExcalidrawChange = (elements: readonly ExcalidrawElement[], state: unknown) => {
-    console.log("Elements:", elements, "State:", state);
-  }
-
-  return <Excalidraw
-    theme="dark"
-    onChange={handleExcalidrawChange}
-  />;
+  return <>
+    <Script id="load-env-variables" strategy="beforeInteractive">
+      {`window["EXCALIDRAW_ASSET_PATH"] = window.origin;`}
+    </Script>
+    <ExcalidrawWithClientOnly />
+  </>;
 };

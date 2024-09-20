@@ -10,12 +10,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@excalidraw/excalidraw": "^0.17.6",
+    "@excalidraw/excalidraw": "v0.17.1-c1b310c",
     "@icons-pack/react-simple-icons": "^10.0.0",
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-slot": "^1.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "lodash": "^4.17.21",
     "lucide-react": "^0.441.0",
     "next": "14.2.12",
     "react": "^18",
