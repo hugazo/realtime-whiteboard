@@ -7,11 +7,15 @@
     "build": "next build",
     "start": "next start",
     "component:add": "npx shadcn@latest add ",
+    "db:init": "prisma init",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
     "lint": "next lint"
   },
   "dependencies": {
     "@excalidraw/excalidraw": "v0.17.1-c1b310c",
     "@icons-pack/react-simple-icons": "^10.0.0",
+    "@prisma/client": "5.19.1",
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-slot": "^1.1.0",
     "class-variance-authority": "^0.7.0",
@@ -31,6 +35,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.12",
     "postcss": "^8",
+    "prisma": "^5.19.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
